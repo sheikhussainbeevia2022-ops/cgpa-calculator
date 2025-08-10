@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPA & CGPA Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    input, button {
+      padding: 6px;
+      margin: 5px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    td {
+      padding: 5px;
+    }
+    #result, #error, #error-container, #result-container {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    #error, #error-container {
+      color: red;
+    }
+    #result, #result-container {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GPA Calculator</h1>
+    
+    <label>Number of Courses: </label>
+    <input type="number" id="num-courses" min="1" />
+    <button onclick="generateCourseInputs()">Enter Courses</button>
+    
+    <table>
+      <tbody id="courses-container"></tbody>
+    </table>
+    
+    <button id="calculate-button" style="display:none;" onclick="calculateGPA()">Calculate GPA</button>
+    
+    <div id="error" style="display:none;"></div>
+    <div id="result" style="display:none;"></div>
+
+    <hr/>
+
+    <h1>CGPA Calculator</h1>
+    <label>Completed Credits: </label>
+    <input type="number" id="completedCredits" step="0.01" /><br />
+    <label>Previous CGPA: </label>
+    <input type="number" id="lastCgpa" step="0.01" /><br />
+    <label>Current Semester Credits: </label>
+    <input type="number" id="currentCredits" step="0.01" /><br />
+    <label>Current Semester GPA: </label>
+    <input type="number" id="currentGpa" step="0.01" /><br />
+    
+    <button onclick="calculateCgpa()">Calculate CGPA</button>
+    
+    <div id="error-container" style="display:none;"></div>
+    <div id="result-container" style="display:none;">
+      CGPA: <span id="cgpaResult"></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
